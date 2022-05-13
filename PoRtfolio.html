@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        My Portfolio
+    </title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="portfolio.css"> 
+        <link rel="stylesheet" media="screen and (max-width:800px)" href="tablet.css"> 
+        <link rel="stylesheet" media="screen and (max-width:530px)" href="phone.css"> 
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing:border-box;
+            }
+            html{
+                scroll-behavior:smooth
+            }
+            /*Navbar*/
+            .navbar{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                background-color: rgba(0, 0, 0, 0.5);
+                position: sticky;
+                top: 0; 
+            }
+            .navbar ul{
+                display: flex;
+                list-style: none;
+                margin: 20px 0px;
+            }
+            .navbar ul li{
+                font-family: century;
+                font-size: 1.1rem;
+                font-weight: bold;
+            }
+            .navbar ul li a{
+                text-decoration: none;
+                color:wheat;
+                padding: 8px 25px;
+                transition:all .5s ease;
+            }
+            .navbar ul li a:hover{
+                background-color: white;
+                color:black;
+                box-shadow:0 0 10px black;
+            }
+
+            /* Home Section */
+            #home{
+                display: flex;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.5);
+                height: 840px;
+                justify-content: center;
+                align-items: center;
+                color: white;
+            }
+            #home::before{
+                content: "";
+                position: absolute;
+                top:0;
+                right: 0;
+                background: url('https://res.cloudinary.com/pranavi/image/upload/v1652353613/butterflies_lsawhs.jpg') no-repeat center center/cover;
+                height: 900px;
+                width: 100%;
+                z-index: -1;
+                opacity: .8;
+            } 
+            h1 {border-style:double;
+                border-width:3px;
+                border-color:white;
+                padding:25px;
+            }
+            .main{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                top: 30%;
+                right: 10%;
+            }
+            .headings{
+                font-family: century;
+                font-size: 3rem;
+                text-align: center;
+                margin: 40px 0px;
+            }
+            #about{
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+                padding: 30px;
+                margin-bottom: 50px;
+                left: 10%;
+            }
+            #pic{
+                display:flex;
+            }
+            #pic img{
+                width: 400px;
+                height: 600px;
+                padding: 10px;
+            }
+            #intro {
+                display: flex;
+                flex-direction: column;
+                text-align: middle;
+                padding: 125px;
+            }
+            #intro h2{
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+            /* Portfolio Section*/
+            #portfolio{
+                display: flex;
+                flex-direction: column;
+                background-color: chartreuse;
+                align-items: center;
+                padding: 20px;
+            }
+            .gallery{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                box-sizing: border-box;
+            }
+            .gallery img{
+                width: 360px;
+                height: 240px;
+                margin: 10px;
+            }
+            /* Services Section*/
+            #services{
+                display: flex;
+                flex-direction: column;
+                padding: 50px;
+                background-color: darkgray;
+            }
+            .row{
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                box-sizing: border-box;
+            }
+            .box{
+                display: flex;
+                flex-direction: column;
+                width: 350px;
+                height: 450px;
+                border: 1px solid black;
+                margin: 35px;
+                align-items: center;
+                text-align: justify;
+                padding: 50px;
+                border-radius: 15px;
+                background: linear-gradient(to top,aqua 50%,white 50%);
+                background-size: 100% 200%;
+                transition: all .8s;
+            }
+            .box:hover{
+                background-position: left bottom;
+                color: black;
+                border: none;
+                box-shadow: 0 0 20px rgb(0, 0, 0);
+            }
+            .box img{
+                width: 80px;
+                height: 80px;
+                background-color: white;
+                padding: 10px;
+            }
+            /* Contact Section */
+            #contact{
+                display: flex;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.9);
+                color: white;
+                padding: 20px;
+            }
+            .form{
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+                align-items: center;
+                margin: 20px 0px;
+            }
+            .input{
+                padding: 12px;
+                margin: 15px;
+                width: 30%;
+                border: none;
+                outline: none;
+            }
+            .msg{
+                width: 20%;
+                padding: 10px;
+                margin: 15px;
+                border: none;
+                outline: none;
+            }
+            #send{
+                padding: 10px;
+                width: 10%;
+                margin: 40px;
+                border: none;
+                outline: none;
+            }
+            #send:hover{
+                cursor: pointer;
+                box-shadow: 0 0 10px rgb(255, 255, 255);
+            }
+        @media only screen and (min-width: 800px){
+            /* Navbar */
+            .navbar ul{
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            /* Headings */
+            .heading{
+                font-size: 2.5rem;
+            }
+            /* About */
+            #pic{
+                flex-direction: column;
+                align-items: center;
+            }
+            #pic img{
+                width: 475px;
+                height: 300px;
+            }
+            #intro h2{
+                text-align: center;
+                padding: 10px;
+            }
+            /* Contact */
+            .input{
+                width: 60%;
+            }
+            #msg{
+                width: 55%;
+            }
+            #send{
+                width: 20%; 
+            }
+        }
+        @media only screen and(min-width: 530px){
+            /* Home */
+            #home{
+                height: 820px;
+            }
+            .headings{
+                font-size: 1.7rem;
+            }
+            /* About */
+            #pic img{
+                width: 300px;
+                height: 175px;
+            }
+            #intro h2{
+                font-size: 1.5rem;
+            }
+            /* Portfolio */
+            .gallery img{
+                width: 250px;
+                height: 150px;
+                margin: 10px;
+            }
+            /* Contact */
+            .input{
+                width: 80%;
+            }
+            #msg{
+                width: 70%;
+            }
+            #send{
+                width: 20%;
+            }
+                    }
+</style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <ul>
+                <li><a href ="#home">Home</a></li>
+                <li><a href ="#about">About</a></li>
+                <li><a href ="#portfolio">Portfolio</a></li>
+                <li><a href ="#services">Skills</a></li>
+                <li><a href ="#contact">Contact me</a></li>
+            </ul>
+        </nav>
+        <section id="home">
+            <div class="='main">
+                <h1 class="headings">Hello everyone, I AM<br>PABBISETTY PRANAVI</h1>
+            </div>
+        </section>
+        <section id="about">
+            <h2 class="headings">ABOUT ME</h2>
+            <div id="pic">
+            
+            <img src="https://res.cloudinary.com/pranavi/image/upload/v1652353820/my_photo_hzodtd.png" alt="">
+            <div id="intro">
+                <h2>PABBISETTY PRANAVI</h2>
+                <p>I am Pabbisetty Pranavi. I am currently pursuing First year of BTech in Computer Sceince and Engineering in VIT-AP University.I am from Anantapur district of Andhra Pradesh state. My hobbies are learning new things and motivating everyone. I am interested in learning Artificial Intelligence and Machine Learning (AIML) and Data Sceince (DS).
+                </p>
+            </div>
+        </div>
+        </section>
+        <section id="portfolio">
+            <h2 class="headings">PORTFOLIO</h2>
+            <div class="gallery">
+                <img src="https://res.cloudinary.com/pranavi/image/upload/v1652353864/Pycer_yi5yro.png" alt="">
+                <img src="https://res.cloudinary.com/pranavi/image/upload/v1652353835/mysql_numzea.png" alt="">
+                <img src="https://res.cloudinary.com/pranavi/image/upload/v1652353727/javacer_ysl4oq.png" alt="">
+                <img src="https://res.cloudinary.com/pranavi/image/upload/v1652353784/javadv_w7hrij.png" alt="">
+                <img src="https://res.cloudinary.com/pranavi/image/upload/v1652353690/engcer_fxb6wz.jpg" alt="">
+                <img src="https://res.cloudinary.com/pranavi/image/upload/v1652353711/htmlcss_m0jprh.png" alt="">
+            </div>
+        </section>
+        <section id="services">
+            <h2 class="headings">MY SKILLS</h2>
+            <div class="row">
+                <div class="box">
+                    <img src="https://res.cloudinary.com/pranavi/image/upload/v1652353835/mysql_numzea.png" alt="">
+                    <h3 class ="headings">My SQL</h3>
+                    <p>In mysql Database concepts like relational database management system.  </p>
+                </div>
+                <div class="box">
+                    <img src="https://res.cloudinary.com/pranavi/image/upload/v1652353711/htmlcss_m0jprh.png" alt="">
+                    <h3 class="headings">HTML and CSS</h3>
+                    <p> In HTML advanced concepts and in CSS also advanced concepts.</p>
+                </div>
+                <div class="box">
+                    <img src="https://res.cloudinary.com/pranavi/image/upload/v1652353747/py_prwwca.png" alt="">
+                    <h3 class="headings">Programming Languages</h3>
+                    <p>In Python libraries like pandas, numpy, matplotlib, seaborn and In java some advanced concepts. </p>
+                </div>
+            </div>
+                <section id="contact">
+                    <h2 class="headings">CONTACT</h2>
+                    <form action="" class="form">
+                        <input type="text" name="name" class="input" placeholder="Enter your name">
+                        <input type="email" name="email" class="input" placeholder="Enter your Email">
+                        <textarea name="msg" id="msg" cols="30" rows="10" placeholder="Type your message here"></textarea>
+                        <input type="submit" value="SEND" id="send">
+                    </form>
+                </section>
+        </section>
+    </body>
+</html>
